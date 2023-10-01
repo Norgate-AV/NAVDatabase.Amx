@@ -34,3 +34,6 @@
 [submodule "module/Panasonic/PanasonicCamera"]
 	path = module/Panasonic/PanasonicCamera
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PanasonicCamera.git
+[submodule "module/Lightware/LightwareLW3"]
+	path = module/Lightware/LightwareLW3
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.LightwareLW3.git
