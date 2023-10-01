@@ -19,3 +19,6 @@
 [submodule "module/Extron/ExtronDVS605"]
 	path = module/Extron/ExtronDVS605
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronDVS605.git
+[submodule "module/Generic/ConfigFromFile"]
+	path = module/Generic/ConfigFromFile
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ConfigFromFile.git
