@@ -7,3 +7,9 @@
 [submodule "module/AMX/EnovaDGX"]
 	path = module/AMX/EnovaDGX
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.EnovaDGX.git
+[submodule "module/iiyama/IiyamaTExxxxSeriesDisplay"]
+	path = module/iiyama/IiyamaTExxxxSeriesDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.IiyamaTExxxxSeriesDisplay.git
+[submodule "module/iiyama/IiyamaLExx40SSeriesDisplay"]
+	path = module/iiyama/IiyamaLExx40SSeriesDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.IiyamaLExx40SSeriesDisplay.git
