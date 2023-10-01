@@ -50,10 +50,10 @@ param (
 try {
     $Path = Resolve-Path $Path
 
-    Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.Name -notmatch "(.history|node_modules)" } | Get-ChildItem -File -Recurse -Include *.axs
+    $directories = Get-ChildItem -Path $Path -Directory -Recurse | Where-Object { $_.FullName -notmatch "(.git|.history|node_modules)" }
 
-    $moduleFiles = Get-ChildItem -Path $Path -Recurse -File -Include *.axs -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "(.history)" }
-    $includeFiles = Get-ChildItem -Path $Path -Recurse -File -Include *.axi -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "(.history)" }
+    $moduleFiles = $directories | Get-ChildItem -File -Include *.axs -ErrorAction SilentlyContinue
+    $includeFiles = $directories | Get-ChildItem -File -Include *.axi -ErrorAction SilentlyContinue
 
     if (!$moduleFiles -and !$includeFiles) {
         Write-Host "No files found in $Path" -ForegroundColor Yellow
