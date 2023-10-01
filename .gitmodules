@@ -31,3 +31,6 @@
 [submodule "module/Generic/SessionManager"]
 	path = module/Generic/SessionManager
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SessionManager.git
+[submodule "module/Panasonic/PanasonicCamera"]
+	path = module/Panasonic/PanasonicCamera
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PanasonicCamera.git
