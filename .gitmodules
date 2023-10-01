@@ -16,3 +16,6 @@
 [submodule "module/Extron/ExtronDMP"]
 	path = module/Extron/ExtronDMP
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronDMP.git
+[submodule "module/Extron/ExtronDVS605"]
+	path = module/Extron/ExtronDVS605
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronDVS605.git
