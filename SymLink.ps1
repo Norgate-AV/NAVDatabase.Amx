@@ -50,28 +50,38 @@ param (
 try {
     $Path = Resolve-Path $Path
 
-    $moduleFiles = Get-ChildItem -Path $Path -Recurse -File -Include *.axs, *.tko -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "(.history)" }
-    $includeFiles = Get-ChildItem -Path $Path -Recurse -File -Include *.axi -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "(.history)" }
+    Get-ChildItem -Path . -Directory -Recurse | Where-Object { $_.Name -notmatch "(.history|node_modules)" } | Get-ChildItem -File -Recurse -Include *.axs
 
-    # $moduleFiles = Get-ChildItem -Path $Path -Include *.axs *.tko -Recurse | Where-Object { $_.FullName -notmatch "(.history)" }
-    # $includeFiles = Get-ChildItem -Path $Path -Filter *.axi -Recurse | Where-Object { $_.FullName -notmatch "(.history)" }
+    $moduleFiles = Get-ChildItem -Path $Path -Recurse -File -Include *.axs -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "(.history)" }
+    $includeFiles = Get-ChildItem -Path $Path -Recurse -File -Include *.axi -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch "(.history)" }
 
     if (!$moduleFiles -and !$includeFiles) {
         Write-Host "No files found in $Path" -ForegroundColor Yellow
         exit
     }
 
-    foreach ($file in $moduleFiles) {
-        $path = Join-Path -Path $ModulePath -ChildPath $file.Name
+    foreach ($file in $includeFiles) {
+        $path = Join-Path -Path $IncludePath -ChildPath $file.Name
         $target = $file.FullName
-    
+
         Write-Host "Creating symlink: $path -> $target" -ForegroundColor Green
         New-Item -ItemType SymbolicLink -Path $path -Target $target -Force | Out-Null
     }
 
-    foreach ($file in $includeFiles) {
-        $path = Join-Path -Path $IncludePath -ChildPath $file.Name
+    foreach ($file in $moduleFiles) {
+        if (!(Test-Path $($file.FullName -replace ".axs", ".tko"))) {
+            Write-Host "TKO file not found for $file" -ForegroundColor Yellow
+            continue
+        }
+
+        $path = Join-Path -Path $ModulePath -ChildPath $file.Name
         $target = $file.FullName
+
+        Write-Host "Creating symlink: $path -> $target" -ForegroundColor Green
+        New-Item -ItemType SymbolicLink -Path $path -Target $target -Force | Out-Null
+
+        $path = Join-Path -Path $ModulePath -ChildPath $($file.Name -replace ".axs", ".tko")
+        $target = $file.FullName -replace ".axs", ".tko"
 
         Write-Host "Creating symlink: $path -> $target" -ForegroundColor Green
         New-Item -ItemType SymbolicLink -Path $path -Target $target -Force | Out-Null
