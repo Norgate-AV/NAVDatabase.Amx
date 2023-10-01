@@ -1,3 +1,9 @@
 [submodule "module/Extron/ExtronSSP"]
 	path = module/Extron/ExtronSSP
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronSSP.git
+[submodule "module/AMX/EnovaDVX"]
+	path = module/AMX/EnovaDVX
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.EnovaDVX.git
+[submodule "module/AMX/EnovaDGX"]
+	path = module/AMX/EnovaDGX
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.EnovaDGX.git
