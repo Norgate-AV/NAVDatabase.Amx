@@ -28,3 +28,6 @@
 [submodule "module/Panasonic/PanasonicDisplay"]
 	path = module/Panasonic/PanasonicDisplay
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PanasonicDisplay.git
+[submodule "module/Generic/SessionManager"]
+	path = module/Generic/SessionManager
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SessionManager.git
