@@ -25,3 +25,6 @@
 [submodule "module/Panasonic/PanasonicProjector"]
 	path = module/Panasonic/PanasonicProjector
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PanasonicProjector.git
+[submodule "module/Panasonic/PanasonicDisplay"]
+	path = module/Panasonic/PanasonicDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PanasonicDisplay.git
