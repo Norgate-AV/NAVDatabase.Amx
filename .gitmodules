@@ -13,3 +13,6 @@
 [submodule "module/iiyama/IiyamaLExx40SSeriesDisplay"]
 	path = module/iiyama/IiyamaLExx40SSeriesDisplay
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.IiyamaLExx40SSeriesDisplay.git
+[submodule "module/Extron/ExtronDMP"]
+	path = module/Extron/ExtronDMP
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronDMP.git
