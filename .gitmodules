@@ -22,3 +22,6 @@
 [submodule "module/Generic/ConfigFromFile"]
 	path = module/Generic/ConfigFromFile
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ConfigFromFile.git
+[submodule "module/Panasonic/PanasonicProjector"]
+	path = module/Panasonic/PanasonicProjector
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PanasonicProjector.git
