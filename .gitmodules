@@ -55,3 +55,6 @@
 [submodule "module/Epson/EpsonESC-VP21Business"]
 	path = module/Epson/EpsonESC-VP21Business
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.EpsonESC-VP21Business.git
+[submodule "module/NEC/NECMultiSyncDisplay"]
+	path = module/NEC/NECMultiSyncDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.NECMultiSyncDisplay.git
