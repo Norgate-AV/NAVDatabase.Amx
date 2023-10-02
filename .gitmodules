@@ -64,3 +64,6 @@
 [submodule "module/LG/LGxxDisplay"]
 	path = module/LG/LGxxDisplay
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.LGxxDisplay.git
+[submodule "module/PJLink/PJLink"]
+	path = module/PJLink/PJLink
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PJLink.git
