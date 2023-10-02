@@ -58,3 +58,6 @@
 [submodule "module/NEC/NECMultiSyncDisplay"]
 	path = module/NEC/NECMultiSyncDisplay
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.NECMultiSyncDisplay.git
+[submodule "module/Samsung/SamsungSyncMasterDisplay"]
+	path = module/Samsung/SamsungSyncMasterDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SamsungSyncMasterDisplay.git
