@@ -67,3 +67,6 @@
 [submodule "module/PJLink/PJLink"]
 	path = module/PJLink/PJLink
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.PJLink.git
+[submodule "module/Casio/CasioProjector"]
+	path = module/Casio/CasioProjector
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.CasioProjector.git
