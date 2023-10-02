@@ -73,3 +73,6 @@
 [submodule "module/AMX/SVSIDecoder"]
 	path = module/AMX/SVSIDecoder
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SVSIDecoder.git
+[submodule "module/Metroplan/MetroplanEyelinePro"]
+	path = module/Metroplan/MetroplanEyelinePro
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.MetroplanEyelinePro.git
