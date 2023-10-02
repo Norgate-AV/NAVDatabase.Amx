@@ -61,3 +61,6 @@
 [submodule "module/Samsung/SamsungSyncMasterDisplay"]
 	path = module/Samsung/SamsungSyncMasterDisplay
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SamsungSyncMasterDisplay.git
+[submodule "module/LG/LGxxDisplay"]
+	path = module/LG/LGxxDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.LGxxDisplay.git
