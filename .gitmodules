@@ -79,3 +79,6 @@
 [submodule "module/Visca/ViscaCamera"]
 	path = module/Visca/ViscaCamera
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ViscaCamera.git
+[submodule "module/Extron/ExtronMVC121Plus"]
+	path = module/Extron/ExtronMVC121Plus
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronMVC121Plus.git
