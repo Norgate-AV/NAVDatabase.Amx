@@ -49,3 +49,6 @@
 [submodule "module/WolfVision/WolfVisionVisualizer"]
 	path = module/WolfVision/WolfVisionVisualizer
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.WolfVisionVisualizer.git
+[submodule "module/Yamaha/YamahaBD-A1020"]
+	path = module/Yamaha/YamahaBD-A1020
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.YamahaBD-A1020.git
