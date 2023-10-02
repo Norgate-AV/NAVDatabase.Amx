@@ -37,3 +37,12 @@
 [submodule "module/Lightware/LightwareLW3"]
 	path = module/Lightware/LightwareLW3
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.LightwareLW3.git
+[submodule "module/Denon/DenonDN-500AV"]
+	path = module/Denon/DenonDN-500AV
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.DenonDN-500AV.git
+[submodule "module/Denon/DenonDN-500BD"]
+	path = module/Denon/DenonDN-500BD
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.DenonDN-500BD.git
+[submodule "module/Denon/DenonDN-500CB"]
+	path = module/Denon/DenonDN-500CB
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.DenonDN-500CB.git
