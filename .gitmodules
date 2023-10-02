@@ -82,3 +82,6 @@
 [submodule "module/Extron/ExtronMVC121Plus"]
 	path = module/Extron/ExtronMVC121Plus
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronMVC121Plus.git
+[submodule "module/Audac/AudacSMQ"]
+	path = module/Audac/AudacSMQ
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.AudacSMQ.git
