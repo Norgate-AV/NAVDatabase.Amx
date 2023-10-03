@@ -97,3 +97,6 @@
 [submodule "module/Generic/GenericIRDevice"]
 	path = module/Generic/GenericIRDevice
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.GenericIRDevice.git
+[submodule "module/Generic/MatrixSwitcherUI"]
+	path = module/Generic/MatrixSwitcherUI
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.MatrixSwitcherUI.git
