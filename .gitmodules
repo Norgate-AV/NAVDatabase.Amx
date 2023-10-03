@@ -85,3 +85,15 @@
 [submodule "module/Audac/AudacSMQ"]
 	path = module/Audac/AudacSMQ
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.AudacSMQ.git
+[submodule "module/Generic/GenericCameraUI"]
+	path = module/Generic/GenericCameraUI
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.GenericCameraUI.git
+[submodule "module/Generic/GenericDocCamUI"]
+	path = module/Generic/GenericDocCamUI
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.GenericDocCamUI.git
+[submodule "module/Generic/GenericProjectorUI"]
+	path = module/Generic/GenericProjectorUI
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.GenericProjectorUI.git
+[submodule "module/Generic/GenericIRDevice"]
+	path = module/Generic/GenericIRDevice
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.GenericIRDevice.git
