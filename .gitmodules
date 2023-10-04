@@ -139,3 +139,6 @@
 [submodule "module/Smart/SmartDisplaySBID-7075"]
 	path = module/Smart/SmartDisplaySBID-7075
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SmartDisplaySBID-7075.git
+[submodule "module/VividTouch/VividTouchDisplay"]
+	path = module/VividTouch/VividTouchDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.VividTouchDisplay.git
