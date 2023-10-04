@@ -133,3 +133,9 @@
 [submodule "module/Sharp/SharpPN-R703"]
 	path = module/Sharp/SharpPN-R703
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SharpPN-R703.git
+[submodule "module/Smart/SmartDisplay"]
+	path = module/Smart/SmartDisplay
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SmartDisplay.git
+[submodule "module/Smart/SmartDisplaySBID-7075"]
+	path = module/Smart/SmartDisplaySBID-7075
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SmartDisplaySBID-7075.git
