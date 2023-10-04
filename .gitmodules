@@ -115,3 +115,12 @@
 [submodule "module/Lutron/LutronQuantum"]
 	path = module/Lutron/LutronQuantum
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.LutronQuantum.git
+[submodule "module/AMX/AMX-CTC-1402"]
+	path = module/AMX/AMX-CTC-1402
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.AMX-CTC-1402.git
+[submodule "module/AMX/AMX-NMX-PRS-N7142"]
+	path = module/AMX/AMX-NMX-PRS-N7142
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.AMX-NMX-PRS-N7142.git
+[submodule "module/AMX/SolecisSwitcher"]
+	path = module/AMX/SolecisSwitcher
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.SolecisSwitcher.git
