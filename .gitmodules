@@ -100,3 +100,12 @@
 [submodule "module/Generic/MatrixSwitcherUI"]
 	path = module/Generic/MatrixSwitcherUI
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.MatrixSwitcherUI.git
+[submodule "module/Extron/ExtronSW4USB"]
+	path = module/Extron/ExtronSW4USB
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronSW4USB.git
+[submodule "module/Extron/ExtronSwitchMLS100A"]
+	path = module/Extron/ExtronSwitchMLS100A
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronSwitchMLS100A.git
+[submodule "module/Extron/ExtronSwitchSW-HDMI"]
+	path = module/Extron/ExtronSwitchSW-HDMI
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ExtronSwitchSW-HDMI.git
