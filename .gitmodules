@@ -142,3 +142,6 @@
 [submodule "module/VividTouch/VividTouchDisplay"]
 	path = module/VividTouch/VividTouchDisplay
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.VividTouchDisplay.git
+[submodule "module/Shure/ShureMXA"]
+	path = module/Shure/ShureMXA
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ShureMXA.git
