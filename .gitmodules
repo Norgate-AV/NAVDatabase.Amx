@@ -145,3 +145,6 @@
 [submodule "module/Shure/ShureMXA"]
 	path = module/Shure/ShureMXA
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.ShureMXA.git
+[submodule "module/Generic/NtpClient"]
+	path = module/Generic/NtpClient
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.NtpClient.git
