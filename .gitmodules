@@ -148,3 +148,6 @@
 [submodule "module/Generic/NtpClient"]
 	path = module/Generic/NtpClient
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.NtpClient.git
+[submodule "module/Generic/EventScheduler"]
+	path = module/Generic/EventScheduler
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.EventScheduler.git
