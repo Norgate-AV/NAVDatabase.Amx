@@ -1,7 +1,7 @@
 {
-    "name": "NAVDatabase.Amx",
-    "version": "1.0.0",
-    "private": true,
+    "name": "navdatabase.amx",
+    "displayName": "NAVDatabase.Amx",
+    "version": "0.0.0",
     "keywords": [
         "amx",
         "netlinx",
@@ -11,38 +11,38 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Norgate-AV-Solutions-Ltd/NAVDatabase.Amx.git"
+        "url": "https://github.com/Norgate-AV/NAVDatabase.Amx.git"
     },
     "bugs": {
-        "url": "https://github.com/Norgate-AV-Solutions-Ltd/NAVDatabase.Amx/issues"
+        "url": "https://github.com/Norgate-AV/NAVDatabase.Amx/issues"
     },
     "engines": {
-        "node": ">=14"
+        "node": ">=18"
     },
     "scripts": {
-        "lint": "echo \"Linting not setup for this project\"",
-        "lint:fix": "echo \"Linting not setup for this project\"",
+        "build": "pwsh ./build.ps1",
         "commit": "git-cz",
-        "prepare": "husky install",
+        "prepare": "husky",
         "pretty:fix": "prettier --write .",
-        "doctoc": "doctoc README.md",
+        "doctoc": "doctoc --title '## Contents 📖' README.md",
         "contrib:add": "all-contributors add",
         "contrib:generate": "all-contributors generate",
-        "contrib:check": "all-contributors check",
-        "size": "size-limit",
-        "analyze": "size-limit --why"
+        "contrib:check": "all-contributors check"
     },
     "devDependencies": {
-        "@commitlint/cli": "^18.4.3",
-        "@commitlint/config-conventional": "^18.4.3",
-        "@norgate-av/genlinx": "^1.1.0",
-        "all-contributors-cli": "^6.24.0",
+        "@commitlint/cli": "^19.5.0",
+        "@commitlint/config-conventional": "^19.5.0",
+        "@norgate-av/genlinx": "^2.5.0",
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/exec": "^6.0.3",
+        "@semantic-release/git": "^10.0.1",
+        "all-contributors-cli": "^6.26.1",
         "commitizen": "^4.3.0",
         "cz-conventional-changelog": "3.3.0",
         "doctoc": "^2.2.1",
-        "husky": "^8.0.3",
-        "lint-staged": "^15.2.0",
-        "prettier": "^3.1.1",
-        "size-limit": "^11.0.1"
+        "husky": "^9.1.6",
+        "lint-staged": "^15.2.10",
+        "prettier": "^3.3.3",
+        "semantic-release": "^24.1.1"
     }
 }
