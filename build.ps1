@@ -42,42 +42,37 @@ param (
 try {
     $Path = Resolve-Path $Path
 
-    $axiFiles = Get-ChildItem -Path $Path -Recurse -File -Filter *.axi -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch ".history" }
-    $axsFiles = Get-ChildItem -Path $Path -Recurse -File -Filter *.axs -ErrorAction SilentlyContinue | Where-Object { $_.FullName -notmatch ".history" }
+    # Recursively search down the tree for all build.ps1 files
+    $buildFiles = Get-ChildItem -Path module -Recurse -File -Filter *.ps1 |
+    Where-Object { $_.FullName -notmatch ".history|.git$|node_modules" } |
+    Where-Object { $_.FullName -match "build" }
 
-    if (!$axiFiles -and !$axsFiles) {
-        Write-Host "No files found in $Path" -ForegroundColor Yellow
+    if (!$buildFiles) {
+        Write-Host "No build.ps1 files found in $Path" -ForegroundColor Yellow
         exit
     }
 
-    $files = [System.Collections.ArrayList]::new()
+    Write-Host "Building $($buildFiles.Count) projects..." -ForegroundColor Cyan
 
-    foreach ($axiFile in $axiFiles) {
-        $files += $axiFile
-    }
+    foreach ($buildFile in $buildFiles) {
+        $x = $buildFiles.IndexOf($buildFile) + 1
+        Write-Host "Building project $x of $($buildFiles.Count)..." -ForegroundColor Cyan
 
-    foreach ($axsFile in $axsFiles) {
-        $files += $axsFile
-    }
-
-    Write-Host "Building $($files.Count) files..." -ForegroundColor Cyan
-
-    foreach ($file in $files) {
-        $x = $files.IndexOf($file) + 1
-        Write-Host "Building file $x of $($files.Count)..." -ForegroundColor Cyan
-
-        $percent = [math]::Round((($x - 1) / $files.Count) * 100, 2)
+        $percent = [math]::Round((($x - 1) / $buildFiles.Count) * 100, 2)
         Write-Host "[$percent%]" -ForegroundColor Cyan
 
-        & "genlinx" build -s $file
+        # Execute the build.ps1 file in it's local context
+        Set-Location -Path $buildFile.Directory.FullName
+        & $buildFile.FullName -Path $buildFile.Directory.FullName
+        Set-Location $PSScriptRoot
 
         if ($LASTEXITCODE -ne 0) {
-            Write-Host "genlinx failed with exit code $($LASTEXITCODE)" -ForegroundColor Red
+            Write-Host "$($buildFile.FullName) failed with exit code $($LASTEXITCODE)" -ForegroundColor Red
             exit 1
         }
     }
 
-    $percent = [math]::Round(($x / $files.Count) * 100, 2)
+    $percent = [math]::Round(($x / $buildFiles.Count) * 100, 2)
     Write-Host "[$percent%]" -ForegroundColor Cyan
     Write-Host "Build complete!" -ForegroundColor Green
 }
