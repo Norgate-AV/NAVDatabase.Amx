@@ -151,3 +151,6 @@
 [submodule "module/Generic/EventScheduler"]
 	path = module/Generic/EventScheduler
 	url = git@github.com:Norgate-AV/NAVDatabase.Amx.EventScheduler.git
+[submodule "module/AMX/AMX-CE-Series-Interface"]
+	path = module/AMX/AMX-CE-Series-Interface
+	url = git@github.com:Norgate-AV/NAVDatabase.Amx.AmxCeSeriesInterface.git
