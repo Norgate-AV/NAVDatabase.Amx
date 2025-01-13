@@ -1,42 +1,62 @@
-$directories = Get-ChildItem -Directory -Recurse | Where-Object { $_.FullName -notmatch "(.git$|.history|node_modules)" }
+#!/usr/bin/env pwsh
 
-$symlinkPaths = $directories | Get-ChildItem -File -Include *.ps1 | Where-Object { $_.FullName -match "SymLink" }
-$archivePaths = $directories | Get-ChildItem -File -Include *.ps1 | Where-Object { $_.FullName -match "archive" }
-$changelogPaths = $directories | Get-ChildItem -File -Include *.json | Where-Object { $_.FullName -match "changelogrc" }
-$releasePaths = $directories | Get-ChildItem -File -Include *.json | Where-Object { $_.FullName -match "releaserc" }
-$ciPaths = $directories | Get-ChildItem -File -Include *.yml | Where-Object { $_.FullName -match "main" }
+<#
+ _   _                       _          ___     __
+| \ | | ___  _ __ __ _  __ _| |_ ___   / \ \   / /
+|  \| |/ _ \| '__/ _` |/ _` | __/ _ \ / _ \ \ / /
+| |\  | (_) | | | (_| | (_| | ||  __// ___ \ V /
+|_| \_|\___/|_|  \__, |\__,_|\__\___/_/   \_\_/
+                 |___/
 
-# Loop through each file and replace the entire contents with the content from "./SymLink.ps1" in this directory
-$symlinkContent = Get-Content "./SymLink.ps1" -Raw
+MIT License
 
-foreach ($path in $symlinkPaths) {
-    Set-Content -Path $path.FullName -Value $symlinkContent -NoNewline
-}
+Copyright (c) 2023 Norgate AV Services Limited
 
-# Loop through each file and replace the entire contents with the content from "./archive.ps1" in this directory
-$archiveContent = Get-Content "./archive.ps1" -Raw
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions
 
-foreach ($path in $archivePaths) {
-    Set-Content -Path $path.FullName -Value $archiveContent -NoNewline
-}
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-# Loop through each file and replace the entire contents with the content from "./changelog.json" in this directory
-$changelogContent = Get-Content "./.changelogrc.json" -Raw
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+#>
 
-foreach ($path in $changelogPaths) {
-    Set-Content -Path $path.FullName -Value $changelogContent -NoNewline
-}
+[CmdletBinding()]
 
-# Loop through each file and replace the entire contents with the content from "./release.json" in this directory
-$releaseContent = Get-Content "./.releaserc.json" -Raw
+$directories = Get-ChildItem -Directory -Recurse | Where-Object { $_.FullName -notmatch "(.git$|.history|node_modules|vendor)" }
+$paths = $directories | Get-ChildItem -File -Include "package.json" | Select-Object -ExpandProperty DirectoryName
 
-foreach ($path in $releasePaths) {
-    Set-Content -Path $path.FullName -Value $releaseContent -NoNewline
-}
+$files = @(
+    @{Name = ".changelogrc.json"; Path = ""},
+    @{Name = ".releaserc.json"; Path = ""},
+    @{Name = "archive.ps1"; Path = ""},
+    @{Name = "build.ps1"; Path = ""},
+    @{Name = "install.ps1"; Path = ""},
+    @{Name = "main.yml"; Path = ".github/workflows"},
+    @{Name = "SymLink.ps1"; Path = ""}
+)
 
-# Loop through each file and replace the entire contents with the content from "./main.yml" in this directory
-$ciContent = Get-Content "./main.yml" -Raw
+foreach ($path in $paths) {
+    foreach ($file in $files) {
+        if ($file.Path -eq "") {
+            Copy-Item -Path $file.Name -Destination "$path/$($file.Name)" -Force
+            continue
+        }
 
-foreach ($path in $ciPaths) {
-    Set-Content -Path $path.FullName -Value $ciContent -NoNewline
+        if (-not (Test-Path "$path/$($file.Path)")) {
+            New-Item -ItemType Directory -Path "$path/$($file.Path)" -Force | Out-Null
+        }
+
+        Copy-Item -Path $file.Name -Destination "$path/$($file.Path)/$($file.Name)" -Force
+    }
 }
