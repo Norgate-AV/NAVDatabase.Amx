@@ -1,7 +1,7 @@
 {
     "name": "navdatabase.amx",
     "displayName": "NAVDatabase.Amx",
-    "version": "0.0.0",
+    "version": "1.53.0",
     "keywords": [
         "amx",
         "netlinx",
@@ -17,7 +17,7 @@
         "url": "https://github.com/Norgate-AV/NAVDatabase.Amx/issues"
     },
     "engines": {
-        "node": ">=18"
+        "node": ">=20"
     },
     "scripts": {
         "build": "pwsh ./build.ps1",
