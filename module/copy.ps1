@@ -38,10 +38,19 @@ $paths = $directories | Get-ChildItem -File -Include "package.json" | Select-Obj
 
 $files = @(
     @{Name = ".changelogrc.json"; Path = ""},
+    @{Name = ".commitlintrc.json"; Path = ""},
+    @{Name = ".czrc"; Path = ""},
+    @{Name = ".editorconfig"; Path = ""},
+    @{Name = ".gitattributes"; Path = ""},
+    @{Name = ".gitignore"; Path = ""},
+    @{Name = ".npmrc"; Path = ""},
+    @{Name = ".prettierignore"; Path = ""},
+    @{Name = ".prettierrc.json"; Path = ""},
     @{Name = ".releaserc.json"; Path = ""},
     @{Name = "archive.ps1"; Path = ""},
     @{Name = "build.ps1"; Path = ""},
     @{Name = "install.ps1"; Path = ""},
+    @{Name = "LICENSE"; Path = ""},
     @{Name = "main.yml"; Path = ".github/workflows"},
     @{Name = "SymLink.ps1"; Path = ""}
 )
